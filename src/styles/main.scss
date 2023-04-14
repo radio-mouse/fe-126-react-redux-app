@@ -1,0 +1,46 @@
+@import "reset";
+@import "bootstrap";
+
+.centered {
+  margin: 0 auto;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+
+  li {
+    width: 200px;
+    flex-grow: 1;
+  }
+}
+
+.categories-list {
+  padding: 0;
+  margin: 0;
+}
+
+.card-content {
+  padding-bottom: 12px;
+}
+
+h5 {
+  pointer-events: none;
+}
+
+.load-more {
+  display: block !important;
+}
+
+.card-title {
+  text-transform: capitalize;
+  display: block;
+  min-height: 100px;
+}
+
+h1 {
+  text-transform: capitalize;
+}
