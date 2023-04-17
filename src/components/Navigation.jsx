@@ -1,14 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { ABOUT, CART, CATEGORIES, HOME, PRODUCTS } from '../helpers/routes';
-import NavigationLink from './NavigationLink';
+import { ABOUT, CART, CATEGORIES, HOME, PRODUCTS } from "../helpers/routes";
+
+import NavigationLink from "./NavigationLink";
 
 const Navigation = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-sm">
-      <Link className="navbar-brand" to={HOME}>SPA SHOP</Link>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <Link className="navbar-brand" to={HOME}>
+        SPA SHOP
+      </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span className="navbar-toggler-icon" />
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
