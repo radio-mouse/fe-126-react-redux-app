@@ -1,9 +1,9 @@
-export const HOME = "/";
+export const ROUTE_HOME = "/";
 
-export const PRODUCTS = "/products";
+export const ROUTE_PRODUCTS = "/products";
 
-export const CATEGORIES = "/categories";
+export const ROUTE_CATEGORIES = "/categories";
 
-export const ABOUT = "/about";
+export const ROUTE_ABOUT = "/about";
 
-export const CART = "/cart";
+export const ROUTE_CART = "/cart";

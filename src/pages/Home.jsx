@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { ABOUT, CART, CATEGORIES, PRODUCTS } from "../helpers/routes";
+import {
+  ROUTE_ABOUT,
+  ROUTE_CART,
+  ROUTE_CATEGORIES,
+  ROUTE_PRODUCTS,
+} from "../helpers/routes";
 
 const Home = () => (
   <>
@@ -35,16 +40,16 @@ const Home = () => (
         <h2 className="display-5">Checkout our sections</h2>
         <ul className="list-unstyled">
           <li>
-            <Link to={PRODUCTS}>Look our products here</Link>
+            <Link to={ROUTE_PRODUCTS}>Look our products here</Link>
           </li>
           <li>
-            <Link to={CATEGORIES}>Look our categories here</Link>
+            <Link to={ROUTE_CATEGORIES}>Look our categories here</Link>
           </li>
           <li>
-            <Link to={ABOUT}>Some information about us</Link>
+            <Link to={ROUTE_ABOUT}>Some information about us</Link>
           </li>
           <li>
-            <Link to={CART}>Check out your cart here</Link>
+            <Link to={ROUTE_CART}>Check out your cart here</Link>
           </li>
         </ul>
       </div>

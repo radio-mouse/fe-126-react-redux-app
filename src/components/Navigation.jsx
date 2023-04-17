@@ -1,14 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { ABOUT, CART, CATEGORIES, HOME, PRODUCTS } from "../helpers/routes";
+import {
+  ROUTE_ABOUT,
+  ROUTE_CART,
+  ROUTE_CATEGORIES,
+  ROUTE_HOME,
+  ROUTE_PRODUCTS,
+} from "../helpers/routes";
 
 import NavigationLink from "./NavigationLink";
 
 const Navigation = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-sm">
-      <Link className="navbar-brand" to={HOME}>
+      <Link className="navbar-brand" to={ROUTE_HOME}>
         SPA SHOP
       </Link>
       <button
@@ -25,19 +31,19 @@ const Navigation = () => (
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav" id="nav-list">
           <li className="nav-item">
-            <NavigationLink route={HOME}>Home</NavigationLink>
+            <NavigationLink route={ROUTE_HOME}>Home</NavigationLink>
           </li>
           <li className="nav-item">
-            <NavigationLink route={PRODUCTS}>Products</NavigationLink>
+            <NavigationLink route={ROUTE_PRODUCTS}>Products</NavigationLink>
           </li>
           <li className="nav-item">
-            <NavigationLink route={CATEGORIES}>Categories</NavigationLink>
+            <NavigationLink route={ROUTE_CATEGORIES}>Categories</NavigationLink>
           </li>
           <li className="nav-item">
-            <NavigationLink route={ABOUT}>About</NavigationLink>
+            <NavigationLink route={ROUTE_ABOUT}>About</NavigationLink>
           </li>
           <li className="nav-item">
-            <NavigationLink route={CART}>
+            <NavigationLink route={ROUTE_CART}>
               Cart&nbsp;
               <span className="badge bg-secondary">0</span>
             </NavigationLink>
