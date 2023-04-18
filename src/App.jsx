@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import "./styles/main.scss";
+import "styles/main.scss";
 
 import {
   ROUTE_HOME,
@@ -9,13 +9,14 @@ import {
   ROUTE_PRODUCTS,
   ROUTE_CART,
   ROUTE_ABOUT,
-} from "./helpers/routes";
+} from "helpers/routes";
 
-import Navigation from "./components/Navigation";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Page404 from "./pages/404";
-import Products from "./pages/Products";
+import Navigation from "components/Navigation";
+import Home from "pages/Home";
+import About from "pages/About";
+import Page404 from "pages/404";
+import Products from "pages/Products";
+import Categories from "pages/Categories";
 
 const App = () => (
   <BrowserRouter>
@@ -24,6 +25,7 @@ const App = () => (
       <Switch>
         <Route exact component={Home} path={ROUTE_HOME} />
         <Route exact component={Products} path={ROUTE_PRODUCTS} />
+        <Route exact component={Categories} path={ROUTE_CATEGORIES} />
         <Route path={ROUTE_CATEGORIES}>
           <h1 className="display-1">Categories</h1>
         </Route>
