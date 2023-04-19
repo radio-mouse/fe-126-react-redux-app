@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { ROUTE_HOME } from "../helpers/routes";
+import { ROUTE_HOME } from "helpers/constants";
 
 const Page404 = () => (
   <>

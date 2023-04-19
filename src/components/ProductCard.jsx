@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { ROUTE_PRODUCTS } from "../helpers/routes";
+import { ROUTE_PRODUCTS } from "helpers/constants";
 
 const ProductCard = ({ product }) => {
   const { slug, title, price, createdBy } = product;

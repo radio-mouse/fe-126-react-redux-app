@@ -2,7 +2,7 @@ import React from "react";
 
 import ProductCard from "./ProductCard";
 
-const Products = ({ products }) => (
+const ProductsList = ({ products }) => (
   <ul className="products-list">
     {products.map((product) => (
       <li key={product.slug}>
@@ -12,4 +12,4 @@ const Products = ({ products }) => (
   </ul>
 );
 
-export default Products;
+export default ProductsList;

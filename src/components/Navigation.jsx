@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 import {
   ROUTE_ABOUT,
   ROUTE_CART,
-  ROUTE_CATEGORIES,
   ROUTE_HOME,
   ROUTE_PRODUCTS,
-} from "../helpers/routes";
+} from "helpers/constants";
 
 import NavigationLink from "./NavigationLink";
 
@@ -35,9 +34,6 @@ const Navigation = () => (
           </li>
           <li className="nav-item">
             <NavigationLink route={ROUTE_PRODUCTS}>Products</NavigationLink>
-          </li>
-          <li className="nav-item">
-            <NavigationLink route={ROUTE_CATEGORIES}>Categories</NavigationLink>
           </li>
           <li className="nav-item">
             <NavigationLink route={ROUTE_ABOUT}>About</NavigationLink>

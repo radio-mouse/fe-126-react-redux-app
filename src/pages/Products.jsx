@@ -1,32 +1,20 @@
 import React from "react";
 
-import ProductsList from "../components/ProductsList";
+import { ReactComponent as Loader } from "assets/Loader.svg";
 
-const PRODUCTS = [
-  {
-    title: "Test Card One",
-    createdBy: { name: "Alexander" },
-    price: 68,
-    slug: "test-card-one",
-  },
-  {
-    title: "Test Card Two",
-    createdBy: { name: "Jake" },
-    price: 82,
-    slug: "test-card-two",
-  },
-  {
-    title: "Test Card Three",
-    createdBy: { name: "Matthew" },
-    price: 51,
-    slug: "test-card-three",
-  },
-];
+import ProductsList from "components/ProductsList";
+import { PRODUCTS } from "helpers/constants";
 
 const Products = () => (
   <>
     <h1 className="display-1">Check Out Our Products</h1>
     <ProductsList products={PRODUCTS} />
+    <div className="centered my-4 d-flex align-items-center justify-content-center">
+      <button type="button" className="btn btn-dark my-4 load-more">
+        Load More
+      </button>
+      <Loader />
+    </div>
   </>
 );
 

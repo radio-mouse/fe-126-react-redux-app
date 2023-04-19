@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ROUTE_HOME } from "../helpers/routes";
+
+import { ROUTE_HOME } from "helpers/constants";
 
 const NavigationLink = ({ route, children }) => {
   const { pathname } = useLocation();

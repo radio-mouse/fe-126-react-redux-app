@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {
-  ROUTE_ABOUT,
-  ROUTE_CART,
-  ROUTE_CATEGORIES,
-  ROUTE_PRODUCTS,
-} from "../helpers/routes";
+import { ROUTE_ABOUT, ROUTE_CART, ROUTE_PRODUCTS } from "helpers/constants";
 
 const Home = () => (
   <>
@@ -41,9 +36,6 @@ const Home = () => (
         <ul className="list-unstyled">
           <li>
             <Link to={ROUTE_PRODUCTS}>Look our products here</Link>
-          </li>
-          <li>
-            <Link to={ROUTE_CATEGORIES}>Look our categories here</Link>
           </li>
           <li>
             <Link to={ROUTE_ABOUT}>Some information about us</Link>
