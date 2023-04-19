@@ -1,15 +1,14 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
-import { PRODUCTS } from "helpers/constants";
+import { ReactComponent as Loader } from "assets/Loader.svg";
+import { useGetDetailProduct } from "helpers/hooks";
 
 const ProductDetail = () => {
-  const {
-    title,
-    createdBy: { name },
-    price,
-  } = PRODUCTS[0];
+  const { productId } = useParams();
+  const { title, name, price, loading } = useGetDetailProduct(productId);
 
-  return (
+  return !loading ? (
     <>
       <h1 className="display-1">{title}</h1>
       <p>By {name}</p>
@@ -20,6 +19,10 @@ const ProductDetail = () => {
         </button>
       </div>
     </>
+  ) : (
+    <div className="centered my-4 d-flex align-items-center justify-content-center">
+      <Loader />
+    </div>
   );
 };
 

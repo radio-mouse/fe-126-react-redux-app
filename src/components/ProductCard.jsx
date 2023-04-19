@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { ROUTE_PRODUCTS } from "helpers/constants";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, isCart }) => {
   const { slug, title, price, createdBy } = product;
   const { name } = createdBy;
 
@@ -17,8 +17,11 @@ const ProductCard = ({ product }) => {
           {name && <p className="card-text">By {name}</p>}
           <span className="display-6">${price}</span>
         </div>
-        <button type="button" className="btn btn-primary">
-          Add to card
+        <button
+          type="button"
+          className={`btn btn-${isCart ? "danger" : "primary"}`}
+        >
+          {isCart ? "Delete" : "Add to card"}
         </button>
       </div>
     </div>

@@ -2,11 +2,11 @@ import React from "react";
 
 import ProductCard from "./ProductCard";
 
-const ProductsList = ({ products }) => (
+const ProductsList = ({ products, isCart }) => (
   <ul className="products-list">
     {products.map((product) => (
       <li key={product.slug}>
-        <ProductCard product={product} />
+        <ProductCard isCart={isCart} product={product} />
       </li>
     ))}
   </ul>
