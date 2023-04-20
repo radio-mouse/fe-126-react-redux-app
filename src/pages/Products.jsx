@@ -1,19 +1,19 @@
 import React from "react";
 
-import { ReactComponent as Loader } from "assets/Loader.svg";
-
 import ProductsList from "components/ProductsList";
-import { useGetProducts } from "helpers/hooks";
+
+import { ReactComponent as Loader } from "assets/Loader.svg";
+import { useProducts } from "helpers/hooks";
 
 const Products = () => {
-  const { products, loading, wasLoaded, loadMore } = useGetProducts();
+  const { items, loadMore, loading, allowLoadMore } = useProducts();
 
   return (
     <>
       <h1 className="display-1">Check Out Our Products</h1>
-      <ProductsList products={products} />
+      <ProductsList products={items} />
       <div className="centered my-4 d-flex align-items-center justify-content-center">
-        {!wasLoaded && !loading && (
+        {allowLoadMore && !loading && (
           <button
             onClick={loadMore}
             type="button"

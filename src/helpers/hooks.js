@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import { getProducts } from "redux/productsSlice";
 import { addProduct, deleteProduct } from "redux/cartSlice";
 
 export const useGetDetailProduct = (productId) => {
@@ -18,38 +19,6 @@ export const useGetDetailProduct = (productId) => {
   return { title, price, name, loading: !product };
 };
 
-export const useGetProducts = () => {
-  const [products, setProducts] = useState([]);
-  const [page, setPage] = useState(1);
-  const [wasLoaded, setWasLoaded] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const loadProducts = () => {
-    setLoading(true);
-
-    fetch(`https://api.storerestapi.com/products?limit=4&page=${page}`)
-      .then((response) => response.json())
-      .then((json) => {
-        setLoading(false);
-        const { data, metadata } = json;
-        const { nextPage } = metadata;
-
-        setProducts((prev) => prev.concat(data));
-        if (nextPage) {
-          setPage(metadata.nextPage);
-        } else {
-          setWasLoaded(true);
-        }
-      });
-  };
-
-  useEffect(() => {
-    loadProducts();
-  }, []);
-
-  return { products, loading, wasLoaded, loadMore: loadProducts };
-};
-
 export const useCart = (product) => {
   const dispatch = useDispatch();
   const items = useSelector(({ cart }) => cart);
@@ -61,4 +30,24 @@ export const useCart = (product) => {
     addProduct: () => dispatch(addProduct(product)),
     deleteProduct: () => dispatch(deleteProduct(product)),
   };
+};
+
+export const useProducts = () => {
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { items, page } = useSelector(({ products }) => products);
+
+  const loadItems = () => {
+    setLoading(true);
+
+    dispatch(getProducts(page)).then(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    if (page === 1) {
+      loadItems();
+    }
+  }, [dispatch]);
+
+  return { loading, items, loadMore: loadItems, allowLoadMore: !!page };
 };
