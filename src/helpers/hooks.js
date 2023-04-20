@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { addProduct, deleteProduct } from "redux/cartSlice";
 
 export const useGetDetailProduct = (productId) => {
   const [product, setProduct] = useState(null);
@@ -45,4 +48,17 @@ export const useGetProducts = () => {
   }, []);
 
   return { products, loading, wasLoaded, loadMore: loadProducts };
+};
+
+export const useCart = (product) => {
+  const dispatch = useDispatch();
+  const items = useSelector(({ cart }) => cart);
+
+  return {
+    items,
+    count: items.length,
+    isInCart: items.some(({ slug }) => slug === product?.slug),
+    addProduct: () => dispatch(addProduct(product)),
+    deleteProduct: () => dispatch(deleteProduct(product)),
+  };
 };

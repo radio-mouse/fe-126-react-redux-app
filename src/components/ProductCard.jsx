@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { ROUTE_PRODUCTS } from "helpers/constants";
+import CartButton from "./CartButton";
 
 const ProductCard = ({ product, isCart }) => {
   const { slug, title, price, createdBy } = product;
@@ -17,12 +18,7 @@ const ProductCard = ({ product, isCart }) => {
           {name && <p className="card-text">By {name}</p>}
           <span className="display-6">${price}</span>
         </div>
-        <button
-          type="button"
-          className={`btn btn-${isCart ? "danger" : "primary"}`}
-        >
-          {isCart ? "Delete" : "Add to card"}
-        </button>
+        <CartButton product={product} isCart={isCart} />
       </div>
     </div>
   );

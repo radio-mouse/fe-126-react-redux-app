@@ -9,6 +9,7 @@ import {
 } from "helpers/constants";
 
 import NavigationLink from "./NavigationLink";
+import CartLabel from "./CartLabel";
 
 const Navigation = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,7 +42,7 @@ const Navigation = () => (
           <li className="nav-item">
             <NavigationLink route={ROUTE_CART}>
               Cart&nbsp;
-              <span className="badge bg-secondary">0</span>
+              <CartLabel />
             </NavigationLink>
           </li>
         </ul>
